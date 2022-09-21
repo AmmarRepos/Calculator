@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 static double readUserInput(string cardinality)
 {
-    Console.Write("Please Enter " + cardinality + ": ");
+    Console.Write($"Please enter {cardinality}: ");
     double userInput = Convert.ToDouble(Console.ReadLine());
     return userInput;
 }
@@ -15,7 +15,7 @@ static double Addition()
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum + bNum;
-    Console.Write("The answer is: " + cNum);
+    Console.WriteLine($"The answer is: {cNum}");
     return cNum;
 }
 
@@ -25,7 +25,7 @@ static double Subtraction()
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum - bNum;
-    Console.Write("The answer is: " + cNum);
+    Console.WriteLine($"The answer is: {cNum}");
     return cNum;
 }
 
@@ -35,7 +35,7 @@ static double Multiplication()
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum * bNum;
-    Console.Write("The answer is: " + cNum);
+    Console.WriteLine($"The answer is: {cNum}");
     return cNum;
 }
 
@@ -50,7 +50,7 @@ static double Division()
         bNum = readUserInput("Denominator");
     }
     double cNum = aNum / bNum;
-    Console.Write("The answer is: " + cNum);
+    Console.WriteLine($"The answer is: {cNum}");
     return cNum;
 }
 
