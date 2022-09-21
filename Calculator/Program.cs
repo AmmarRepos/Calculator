@@ -9,37 +9,34 @@ static double readUserInput(string cardinality)
 }
 
 // Addition method
-static double Addition()
+static void Addition()
 {
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum + bNum;
     Console.WriteLine($"The answer is: {cNum}");
-    return cNum;
 }
 
 // Subtraction method
-static double Subtraction()
+static void Subtraction()
 {
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum - bNum;
     Console.WriteLine($"The answer is: {cNum}");
-    return cNum;
 }
 
 // Multiplication method
-static double Multiplication()
+static void Multiplication()
 {
     double aNum = readUserInput("First Number");
     double bNum = readUserInput("Second Number");
     double cNum = aNum * bNum;
     Console.WriteLine($"The answer is: {cNum}");
-    return cNum;
 }
 
 // Division Method and Division by zero is handled
-static double Division()
+static void Division()
 {
     double aNum = readUserInput("Numerator");
     double bNum = readUserInput("Denominator");
@@ -50,7 +47,6 @@ static double Division()
     }
     double cNum = aNum / bNum;
     Console.WriteLine($"The answer is: {cNum}");
-    return cNum;
 }
 
 
