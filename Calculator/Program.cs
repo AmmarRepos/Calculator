@@ -1,7 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// First Assginement Calculator
 
-using System.Linq.Expressions;
-
+// This method capture the user input
 static double readUserInput(string cardinality)
 {
     Console.Write($"Please enter {cardinality}: ");
@@ -9,7 +8,7 @@ static double readUserInput(string cardinality)
     return userInput;
 }
 
-
+// Addition method
 static double Addition()
 {
     double aNum = readUserInput("First Number");
@@ -19,7 +18,7 @@ static double Addition()
     return cNum;
 }
 
-
+// Subtraction method
 static double Subtraction()
 {
     double aNum = readUserInput("First Number");
@@ -29,7 +28,7 @@ static double Subtraction()
     return cNum;
 }
 
-
+// Multiplication method
 static double Multiplication()
 {
     double aNum = readUserInput("First Number");
@@ -39,7 +38,7 @@ static double Multiplication()
     return cNum;
 }
 
-
+// Division Method and Division by zero is handled
 static double Division()
 {
     double aNum = readUserInput("Numerator");
@@ -55,7 +54,8 @@ static double Division()
 }
 
 
-
+// A switch statement to select the correct method to run according to
+// user choice
 static void SelectOperation()
 {
     Console.WriteLine("Please Select an Operation {+ - * /}");
@@ -82,6 +82,8 @@ static void SelectOperation()
 }
 
 
+
+// The entry-point of the program 
 string userOpt = "";
 while (userOpt != "yes")
 {
