@@ -1,75 +1,69 @@
 ﻿// First Assginement Calculator
-// This method capture the user input
-static double readUserInput(ref string message)
-{
-    Console.WriteLine(message);
-    double.TryParse(Console.ReadLine(), out double userInput);
-    return userInput;
-}
+using Assignments;
 
-static void Addition(double aNum, double bNum)
+static double Addition(double aNum, double bNum)
 {
-    Console.WriteLine($"The answer is: {aNum + bNum}");
+    return aNum + bNum;
 }
 
 // Subtraction method
-static void Subtraction(double aNum, double bNum)
+static double Subtraction(double aNum, double bNum)
 {
-    Console.WriteLine($"The answer is: {aNum - bNum}");
+    return aNum - bNum;
 }
 
 // Multiplication method
-static void Multiplication(double aNum, double bNum)
+static double Multiplication(double aNum, double bNum)
 {
-    Console.WriteLine($"The answer is: {aNum * bNum}");
+    return aNum * bNum;
 }
 
 // Division Method and Division by zero is handled
-static void Division(double aNum, double bNum)
+static double Division(double aNum, double bNum)
 { 
     if (bNum == 0)
-    Console.WriteLine($"The answer is: Infinity");
+    {
+        Console.WriteLine($"The answer is: Infinity");
+        return aNum / bNum;
+    }
     else
-    Console.WriteLine($"The answer is: {aNum / bNum}");
+        return aNum / bNum;
 }
 
 
 // A switch statement to select the correct method to run according to
 // user choice
-static void SelectOperation(string userOperation, ref double aNum, ref double bNum)
+static double Calculator(string userOperation, ref double aNum, ref double bNum)
 {
     switch (userOperation)
     {
         case "+":
-            Addition(aNum, bNum);
-            break;
+            return Addition(aNum, bNum);
         case "-":
-            Subtraction(aNum, bNum);
-            break;
+            return Subtraction(aNum, bNum);
         case "*":
-            Multiplication(aNum, bNum);
-            break;
+            return Multiplication(aNum, bNum);
         case "/":
-            Division(aNum, bNum);
-            break;
+            return Division(aNum, bNum);
         default:
-            break;
+            return 0;
     }
 }
 
 
 // The entry-point of the program 
-string userOperation, message;
-double aNum, bNum;
+string userOperation;
+double aNum, bNum, cNum;
 while (true)
 {
     Console.WriteLine("type an operations {+ - * /} or x to exit");
     userOperation = Console.ReadLine()!;
     if (userOperation.ToLower() == "x")
         break;
-    message = "Please input first number: ";
-    aNum = readUserInput(ref message);
-    message = "Please input second number: ";
-    bNum = readUserInput(ref message);
-    SelectOperation(userOperation, ref aNum, ref bNum);
+    Console.Write("Please input first number: ");
+    aNum = double.Parse(Console.ReadLine()!);
+    Console.WriteLine("Please input second number: ");
+    bNum = double.Parse(Console.ReadLine()!);
+    cNum = Calculator(userOperation, ref aNum, ref bNum);
+    Console.WriteLine($"The answer is: {cNum} \n--------------------------");
 }
