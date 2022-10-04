@@ -20,18 +20,35 @@ namespace Calculator.Tests
     public class DivisionTests
     {
         [Fact]
-        public void Division_Logic()
+        public void Division_Logic_One()
         {
             double aNum = 10, bNum = 10;
             double ans = Operations.Division(aNum, bNum);
             Assert.Equal(1, ans);
         }
+
         [Fact]
-        public void Division_By_Zero()
+        public void Division_Logic_Zero()
+        {
+            double aNum = 0, bNum = 10;
+            double ans = Operations.Division(aNum, bNum);
+            Assert.Equal(0, ans);
+        }
+
+        [Fact]
+        public void Division_By_Zero_Positive()
         {
             double aNum = 10, bNum = 0;
             double ans = Operations.Division(aNum, bNum);
             Assert.Equal(double.PositiveInfinity, ans);
+        }
+
+        [Fact]
+        public void Division_By_Zero_Negative()
+        {
+            double aNum = -10, bNum = 0;
+            double ans = Operations.Division(aNum, bNum);
+            Assert.Equal(double.NegativeInfinity, ans);
         }
 
         [Fact]
